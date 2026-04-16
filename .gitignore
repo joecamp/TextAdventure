@@ -39,3 +39,19 @@
 
 # debug information files
 *.dwo
+
+# Visual Studio build output
+x64/
+Debug/
+Release/
+
+# Visual Studio temporary files
+.vs/
+*.log
+*.tlog
+*.idb
+*.suo
+*.user
+
+# Agents
+claude.md

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+
 #include "Player.h"
 #include "GameInputUtils.h"
 #include "DifficultySettings.h"
@@ -14,7 +15,7 @@ using std::endl;
 int main()
 {
     cout << "Creating new Player!" << endl;
-    
+
     // Select difficulty
     DifficultySettings diffSetting = GameInputUtils::selectDifficulty();
 
@@ -26,6 +27,12 @@ int main()
 
     player.displayHealth();
     player.displayMoney();
+
+    // Item testing
+    Item campSuppliesItem = Item("Camp Supplies", 1.5, 20);
+    player.tryAddItem(campSuppliesItem);
+    player.tryAddItem(campSuppliesItem);
+    player.displayInventory();
 
     // Goblin attack
     cout << "A goblin has stabbed you!" << endl;
