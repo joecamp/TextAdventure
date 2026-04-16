@@ -138,6 +138,7 @@
     <ClInclude Include="Health.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemDatabase.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Wallet.h" />
   </ItemGroup>

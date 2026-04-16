@@ -45,6 +45,9 @@
     <ClInclude Include="Inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ItemDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

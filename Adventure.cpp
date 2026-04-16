@@ -4,7 +4,7 @@
 #include "Player.h"
 #include "GameInputUtils.h"
 #include "DifficultySettings.h"
-#include "Item.h"
+#include "ItemDatabase.h"
 
 using std::string;
 using std::vector;
@@ -29,9 +29,14 @@ int main()
     player.displayMoney();
 
     // Item testing
-    Item campSuppliesItem = Item("Camp Supplies", 1.5, 20);
-    player.tryAddItem(campSuppliesItem);
-    player.tryAddItem(campSuppliesItem);
+    player.tryAddItem(ItemDatabase::CAMP_SUPPLIES);
+    player.tryAddItem(ItemDatabase::HEALTH_POTION);
+    player.tryAddItem(ItemDatabase::IRON_SWORD);
+    player.tryAddItem(ItemDatabase::WOODEN_SHIELD);
+    player.displayInventory();
+
+    player.tryDropItemAtIndex(0);
+    player.tryDropItemAtIndex(6);
     player.displayInventory();
 
     // Goblin attack

@@ -41,7 +41,7 @@ public:
 	void deductMoney(int value)			{ wallet.deduct(value); }
 	void displayMoney() const			{ wallet.display(); }
 
-	bool tryAddItem(Item& item)			{ return inventory.tryAddItem(item); }
-	void displayInventory() const		{ inventory.displayInventory(); }
-	void displayInventoryWeight() const { inventory.displayInventoryWeight(); }
+	bool tryAddItem(const Item& item)		{ return inventory.tryAddItem(item); }
+	bool tryDropItemAtIndex(int itemIndex)	{ return inventory.tryDropItemByIndex(itemIndex); }
+	void displayInventory() const			{ inventory.displayInventory(); }
 };

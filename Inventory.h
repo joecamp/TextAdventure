@@ -20,9 +20,9 @@ public:
 		this->maxCarryWeight = maxCarryWeight;
 	}
 
-	bool tryAddItem(Item& item);
-	void addItem(Item& item);
-	bool dropItemByIndex(int itemIndex);
+	bool tryAddItem(const Item& item);
+	void addItem(const Item& item);
+	bool tryDropItemByIndex(int itemIndex);
 	float getInventoryWeight() const;
 	void displayInventory() const;
 	void displayInventoryWeight() const;

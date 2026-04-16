@@ -5,7 +5,7 @@
 using std::cout;
 using std::endl;
 
-bool Inventory::tryAddItem(Item& item) {
+bool Inventory::tryAddItem(const Item& item) {
 	float totalWeight = getInventoryWeight();
 	if (totalWeight + item.weight <= maxCarryWeight) {
 		addItem(item);
@@ -18,8 +18,21 @@ bool Inventory::tryAddItem(Item& item) {
 	}
 }
 
-void Inventory::addItem(Item& item) {
+void Inventory::addItem(const Item& item) {
 	items.push_back(item);
+}
+
+bool Inventory::tryDropItemByIndex(int itemIndex) {
+	if (itemIndex < 0 || itemIndex >= items.size()) {
+		cout << "Given inventory index '" << itemIndex << "' out of range." << endl;
+		return false;
+	}
+
+	// Remove element at index 'itemIndex' from the items vector
+	cout << items[itemIndex].name << " was dropped." << endl;
+	items.erase(items.begin() + itemIndex);
+
+	return true;
 }
 
 float Inventory::getInventoryWeight() const {
@@ -40,8 +53,6 @@ void Inventory::displayInventory() const {
 	cout << "-----------------------------" << endl;
 	displayInventoryWeight();
 
-	// I want to output "[index in array]" before each item. That will give the user the ability to say something like
-	// "drop item 3" and have that item be removed from the inventory
 	int index = 0;
 	for (const auto& item : items) {
 		cout << "[" << index << "] ";
